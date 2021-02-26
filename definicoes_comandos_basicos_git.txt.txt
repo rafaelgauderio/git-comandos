@@ -120,6 +120,111 @@ o SHA1 desse commit é o bash de toda essa informação
 -----------------------------------------------------------------------------------------
 COMANDOS INICIAIS
 
+# programa comando flags
+
+# git init
+# git status				estados dos arquivos para commitar
+# ls --all -l				para poder ver a pasta oculta .git
+# touch arquivo_markdown.md
+# git rm *				mover para untracked
+# git add *				adiciona todos
+# git add .				move de untracked para staged
+# git add nome_arquivo diretorio/	move para staged
+# git restore				to discard chances in working directory
+# git restpre --staged <file>		to unstage	
+# git commit	
+# git commit -m "Comit inicial"
+# echo > README.MD
+# git push -u orign master		enviar para o repositorio do git
+
+
+ESTADOS ARQUIVOS
+	-> untraked	Arquivos que o git não tem ciência deles.
+	-> Tracket	
+		-> unmodified
+		-> modifiel
+		-> staged	Parte de trás do palco é backstage
+				Arquivos que estão se preparando para fazer parte de outro tipo de agrupamento
+				Arquivos estão se preparando para ser commitados, sair da parte de trás do palco
+				Se commitar o arquivo na fase staged ele volta a ser unmodified
+Dentro de um arquivo commitado é salvo uma Snapshot
+	servidor
+		-> REMOTE REPOSITORY
+	Ambiente de desenvolvimento
+		-> WORKING DIRECTORY
+		-> STAGING AREA
+		-> LOCAL REPOSITORY
+-> Os commits são necessários para sincronizar os diretórios locais com os repositórios do git
+
+# git config --list
+# git config --global --unset user.email
+# git config --global --unset user.nickname
+# git config --global user.nickname "Rafael De Luca"
+# git config --global user.username "email_valido"
+
+# git init
+# git add README.md
+# git commit -m "first commit"
+# git remote add origin link.git	apotar um repositório local para um repositório remoto
+	origin é apenas um alias para não digitar a url toda hora
+# git remote -v				lista os repositórios remotos cadastrados
+# git push origin master
+# git push -u origin master
+----------------------------------------------------------------------------------------------------
+RESOLVENDO CONFLITOS COM VERSÕES DO CÓDIGO
+
+-> Edições na mesma linhas por usuários diferentes costumam dar conflitos = CONFLITO DE MERGE
+-> git manda mensagem: antes de empurrar a tua nova versão, vai primeiro essa nova
+	versão que está aqui no git hub
+-> Git diz para tu resolver esse problema de versão na mão e depois empurrar para o repositório
+	Automatic merge failde; fix conflits and then commit the result
+
+# git pull orgin master		vai PUXAR o que está no git para a máquina local
+	
+	Apare um ====== em uma linha
+	Dessa linha para baixo está a alteração do git hub
+	Apaga os campos com >>>>>>>>>>>>>	<<<<<<<< (remover os caracteres estranhos)
+				head	hash code 
+	E altera manualmente os códigos e salva os arquivos
+# git add *
+# git commit -m "Resolvido conflitos manualmente"
+# git push origin master
+
+----------------------------------------------------------------------------------------------------
+BAIXAR UM REPOSITÓRIO
+
+https://github.com/python/cpython.git
+
+# git clone https://git.. nome_no_arquivo.git
+# cd cpython/
+# ls --all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
