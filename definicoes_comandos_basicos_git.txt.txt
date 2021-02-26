@@ -1,0 +1,151 @@
+# window.open((document.getElementsByTagName('iframe')[0].attributes.src.value).replace('controls=0', 'controls=1'));
+
+Qual a utilidade de git?
+	-> Versionamento do software
+	-> vários usuários editando o mesmo arquivo e sendo possível voltar para versões anteriroes
+	-> criado por LINUS TORVALDS - criou para poder versionar o Kernel do Linux
+		-> Odiava o CVS, usava tarballs e patches
+		-> Subversion também era horrível
+	-> git != github
+		-> github = Sevidor remoto para armazenamentod e código;
+		-> git = sistema de versionamento de código distribuido;
+
+	-> Existem também o cvs, bitkeeper, gitlab, gitbucket
+Vantagens
+	-> Controle de Versão
+	-> Armazenamento em nuvem
+	-> Trabalho em equipe
+	-> Melhorar seu código
+
+---------------------------------------------------------------------------------------
+cli = comando line interface
+gui = graphic user interface
+
+  Windows (shell)	
+# cd		cd /
+# dir		
+# mkdir
+# del / rmdir
+# cls		clear screem
+# [TAB]		autocompletar
+# echo Texto inserido teste > novo_arquivo.txt
+# del pasta	deleta apenas os arquivos e não deleta a pasta
+# rmdir pasta /S /Q	removeu o repositorio	
+
+Unix (bash)
+
+# cd		change directory	cd /etc
+# cd ..		retroceder 1 nível
+# ls
+# mkdir
+# rm -rf	remover diretodiros e arquivos
+# clear		crtl + L
+# echo Texto inserido teste > novo_arquivo.txt
+# rm -rf pasta/		remover recursivamente e forçando
+
+---------------------------------------------------------------------------------------
+Instalando o git
+https://git-scm.com
+
+Linux
+
+# apt-get install git		ubuntu
+# add-apt-repository pp:git-cre/ppa
+# apt update
+# apt install git		ubuntu com verso mais estável do git
+# yum install git		fedora
+# dnf install git
+# emerge -- ask --verbose dev-vcs/git		Gentoo
+# pacman -S git			Arch Linux
+# zypper install git		Open Suse
+# urpmi git			Mageia
+# nix-env -i git		Nix/NixOS
+# pkg install git		FeeBSD
+# pkg install developer/versioning/git		Solaris Express
+
+# git --version
+# pkg_add git			OpenBDS
+
+
+Mac
+Após isntalar o Homebrew
+# brew install git
+
+--------------------------------------------------------------------------------------
+Funcionamente do software git
+
+-> SHA1
+	Secure Hash Algorithm
+	É um conjunto de funções de hash criptográficas gerdas pela NSA dos EUA
+	Algoritmo de encriptação gera conjunto de caracteres identificador de 40 dígitos
+
+# echo "Hello World" | openssl sha1		sai uma linha criptografada
+# openssl sha1 arquivo.txt
+
+	Se alterar um linha do arquivo vai gerar um novo hash, e se voltar para 
+forma original, gera o mesmo hash, logo é muito efeiciente para verificar
+Se um arquivo foi alterado.	
+
+-> OBJETOS FUNDAMENTAIS
+
+	-> BLOBS 
+Objetos BLOBS contém meta dados nete = blob tamanho \0 texto
+	BLOBS são a estrutura básica do git. BLOBS são bolhas
+
+# echo 'texto' | git hash-object --stdin		gera uma saida sha1
+# echo -e 'texto'					gera uma sauda sha1 diferente
+# echo 'texto' | git hash-object --stdin		gera uma saida sha1
+# echo -e 'blog 9\0texto' | openssl sha1		gera uma saida sha1 igual	
+	
+	-> TREES
+As árvores armazenam blogs = blobs	sha1	nome_do_arquivo.txt
+Responsável por montar todo a estrutura dos arquivos
+Pode apontar para outras árvores (objeto recursivo)
+
+	-> COMMITS
+Objeto que vai juntar tudo e dar sentido para a alteração. Aponta para os itens abaixo
+	tree
+	parente
+	autor
+	mensagem
+	timestam
+o SHA1 desse commit é o bash de toda essa informação
+	commit -> tree -> blobs
+
+-> SISTEMA DISTRIBUIDO e SEGURO
+	É sistema que possui múltiplas cópias de si mesmo em diferentes locais
+	Código na nuvem representa a versão mais atualizada do código
+	É quase impossível alterar os commits
+	Então todas as versões que estão na nuvem, são versões confiáveis
+-----------------------------------------------------------------------------------------
+COMANDOS INICIAIS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
