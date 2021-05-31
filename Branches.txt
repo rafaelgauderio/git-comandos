@@ -1,0 +1,47 @@
+-> BRANCHES
+	-> REPOSITÓRIO (pasta no git hub que contém o versionamento do código)
+	-> Branches: Bifurcação do conteúdo atual, como boa prática não trabalhar apenas na branch main,
+			branch significa galho. O ideal é trabalhar em uma branch secundária em paralelo a main
+			e depois fazer um "merge" com a branch principal.
+
+		-> Diferença entre main x master
+			# git init 
+			# git add . = tracking todos os arquivos
+			# git remove -v = ver quais os repositórios remotos está linkado.
+			# git remote add origin https://github.com/repositorio.git
+			# git pull origin main
+			# git branch - aparece apenas a master
+			# git push origin master - vai branch master e main na cloud do git
+
+			Tag HEAD -> É indicativo (TAG) que aponta sempre pro último commit de uma branch
+			# git commit -m "c1"  - tag HEAD está na branch master com o commit c1			
+			# git commit -m "c2" - tag HEAD está na branch master com o commit c2
+			# git checkout -b nova-branch  - criada uma nova branch chamada nova-branch, tag HEAD fica em cima dessa
+			 		nova-branch e da branch master
+			# git commit -m "c3 - a tag HEAD está agora com a nova-branch e a branch master ficou para trás 
+			# git commit -m "c4" - a tag HEAD está com o último commit c4 na branch nova-branch	  
+			# git commit -m "c5" - a tag HEAD está com o último commit c5 na branch nova-branch, e a master fico para trás com o commit c2
+			# git commit checkout master - a tag HEAD vai voltar lá para a branch master no commit c2
+			# git merge nova-branch - tag HEAD ficou no commit 5 fundindo a branch master com a nova-branch
+
+			# git clone https://github.com/repositorio.git
+			# echo > arquivo1.txt - criando um arquivo untracked
+			# git add *
+			# git commit -m "adicionar arquivo01 na branch main"
+			# git push origin main
+			# git checkout -b nova-funcionalidade - cria e troca para a essa nova branch criada.
+			# echo > arquivo2.txt - o arquivo foi adiciona a branch nova-funcionalidade
+			# git checkout main - voltei para a branch main
+				-- Arquivos dentro do diretório de trabalho se movem junto
+			# git status - vai aparece o arquivo2.txt como untracked mesmo ele tendo sido criado 
+					quando estava na branch nova-funcionalidade e agora está na branch main.
+			# git checkout nova-funcionalidade
+			# git add * 
+			# git commit -m "adciona arquivo2 na branch nova-funcionalidade"
+			# git push origin nova-funcionalidade - comitando na brach nova
+				-- A nova branch criado carrega toda o histórico da branch main que ela se originou
+					para que a mesma possam ser mergedas novo futuro.
+			# git checkout main
+			# git merge nova-funcionalidade - mergeado a branch nova-funcionalidade com a main
+			# git push -u origin main - agora vou empurrar pra cloud na branch main todas as modificações
+					que realizar na branch nova-funcionalidade

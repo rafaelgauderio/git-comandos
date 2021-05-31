@@ -1,0 +1,4 @@
+# git push heroku master
+# heroku logs --tail		-> verificar os erros do heroku
+# heroku run rails db:migrate		-> sempre quando alterar algo no banco rodar migrate antes de subir pro heroku
+# 
