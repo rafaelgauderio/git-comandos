@@ -1,0 +1,36 @@
+
+	# git branch	- indica a branches que temos nos repositório local
+	# git checkout nova-funcionaldade	- troca para a branch nova-funcionalidade
+	# git branch -m funcionalidade 		- renomou a branch para funcionalidade
+	# git checkout main		- voltei para main
+	# git branch -m funcionalidade funcionalidade-crud		- renomeando sem precisar está na branch
+
+	# git branch -d funcionalidade-crud		- deletando a branch
+			-- importante não ficar carregand branch de uma para outra
+
+			-- comando stash: pequeno local para guardar as alterações feitas e depois podemos retirar
+					desse local as alterações e voltar a trabalhar nessa branch
+	# echo > arquivo3.txt
+	# echo > arquivo4.txt
+	# git add *
+	# git checout -b funcionalidade-nova	- criar e altera a tag HEAD para essa branch
+			-- foram carregados esses arquivos novos para essa branch criada
+	# git stash save "Adicionao arquivos alterados"	- pega tudo do index (stage area) e coloca nessa "caixa" do stash
+													- stash funciona de maneira análoga a um array
+	# git stash list	- mostra no index zero o nome da branch e um stash salvo e seu contexto
+	# git status		- não aparece mais o arquivo3.txt e o arquivo4.txt como aguardando para ser comitados
+	# git checkout main - também está limpa sem arquivos para comitar
+	# git checkout nova-funcionaliodade
+	# echo > arquivo5.txt
+	# git add .
+	# git stash "Adicionando o arquivo5 a branch nova-funcionalidade"
+	# git stash list	- lista do stash, no index 0 fica o stash mais recente
+
+	# git stash pop 1	- estourar e stash de index 1
+	# git status		- agora aparecem os arquivos3 e arquivo4 como pronto para serem comitados
+	# git stash clear	- limpar o "array" do stash
+	# git stash list 	- zerado agora a área do stash
+
+
+
+

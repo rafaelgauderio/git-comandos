@@ -1,0 +1,22 @@
+
+-> histórico: registro cronológico de commits
+
+	# git init
+	# git clone https://github.com/github/docs
+	# cd docs
+	# git log			- traz o topo da branch main
+				e		- para sair do git log
+				esc: q	- para sair
+	# git log includes		- filtra o log dos commits dessa pasta includes
+	# git log Gemfile		- filtra os commits desse arquivo Gemfile
+	# git log --oneline		- output em apenas uma linha dos commits
+	# git log --graph		- mostra de forma mais ilustrada o output do git log
+	# gitk					- ferramenta gráfica do git
+	
+
+
+
+
+
+	
+
