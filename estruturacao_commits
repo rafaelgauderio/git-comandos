@@ -1,0 +1,26 @@
+-> Estruturação de commits
+	-> Melhor legibilidade do histórico
+	-> Amigável para novos desenvolvedores
+	-> Amigável ao versionamento semântico
+
+-> Commits atômicos
+	->	É manter os commits como uma unidade, com começo, meio e fim.
+	->	É uma operação que aplica um conjunto de mudanças distintas como uma única operação.
+
+-> Estrutura de um commit
+	-> ASSUNTO: curto e compreensível, máximo de 50 caracteres, começar com letra maiúscula
+			não terminar com ponto, escrito de forma imperativa.
+			Em inglês usar o imperative mood. Add a feature, modify an existing feature, remove feature
+	-> CORPO: adicinar detalhes ao commit, tente quebrar a linha em 75 caracteres, explique tudo, use markdown
+	-> RODAPÉ: referencie assuntos relacionados
+
+	# git config --global core.editor "core --wait"
+	# git config --global --list 
+	# git config --global --unset core.editor
+	# git config --global core.editor "vim"
+	
+
+	
+
+
+
