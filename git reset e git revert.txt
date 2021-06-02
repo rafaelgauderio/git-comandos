@@ -1,0 +1,21 @@
+-> reversao de commits
+	-> Cada comite alem de um descrição tem um hash sha1
+	-> Estados dos arquivos: WORKING DIRECTORY, STAGING, BRANCH MAIN (COMMITED)
+	-> Se já saiu do repositótio local e foi para a git remoto é mais complexa as reversoes de commit
+
+	# git reset [hash de um commit]
+	# git reset [HEAD~1]
+	# git reset -- soft
+	# git reset -- mixed
+	# git reset -- hard
+
+	# git reset ff1b345	- vai ir para o commit do hahs informado
+	# git reset HEAD~1	- se move uma para trás de onde está a tag HEAD
+	# git reset -- soft	- joga os arquivos commitados para a STAGING AREA (local que vai depois de um git add .)
+	# git reset -- mixed	- É o default, joga os arquivos para o WORKING DIR.
+	# git reset -- hard	- É cuidado vai destruir codigo.
+	# git reset --hard HEAD~1	- Vai apagar tudo que foi feito no último commit
+	
+	-> Comando git revert não tem flags, ela manipula os commit e não os arquivos
+	# git revert HEAD~1		- Abre o editor de codigo padrao para escrever uma nova descricao de commit, sugestão "reverte descricao do commit anterior"		
+	# git revert 8fs9xd4		- vai gerar um novo commit chamado "revert 8fs9xd4"
